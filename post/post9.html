@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoạn Code Đầu Tiên Khi Học JavaScript</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html#home">Trang chủ</a>
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#contact">Liên hệ</a>
+    </div>
+
+    <div class="post-detail">
+        <h1>Đoạn Code Đầu Tiên Khi Học JavaScript</h1>
+        <p>Khi bắt đầu học JavaScript trên Cisco, mình thực sự ấn tượng với cách ngôn ngữ này tạo ra sự tương tác động. Đoạn code đầu tiên mình yêu thích là tạo một bộ đếm thời gian, giúp mình hiểu về cách JavaScript thao tác với DOM (Document Object Model).</p>      
+        <pre>
+            let count = 0;
+            const counterElement = document.getElementById('counter');
+            const incrementButton = document.getElementById('increment');
+            
+            incrementButton.addEventListener('click', () => {
+                count++;
+                counterElement.textContent = `Count: ${count}`;
+            });            
+        </pre>
+        <p><strong>Cách hoạt động:</strong></p>
+        <ul>
+            <li><code>document.getElementById</code> truy xuất các phần tử HTML bằng ID của chúng.</li>
+            <li>Một biến count được khởi tạo để lưu trữ giá trị bộ đếm.</li>
+            <li>Gắn sự kiện click cho nút bằng <code>addEventListener.</code> Khi nút được nhấn, giá trị count tăng thêm 1.</li>
+            <li><code>counterElement.textContent</code> thay đổi nội dung hiển thị trên giao diện, cập nhật giá trị bộ đếm mới.</li>
+            <li>Dựa vào giá trị của biến isPrime, chương trình sẽ in kết quả tương ứng.</li>
+        </ul>
+        <p>Đoạn code này giúp mình hiểu cách xử lý sự kiện và cập nhật giao diện động trong JavaScript. Cisco đã hướng dẫn cách kết nối logic với giao diện một cách mượt mà, làm rõ cách các thành phần tương tác với nhau.</p>
+    </div>
+</body>
+</html>
+

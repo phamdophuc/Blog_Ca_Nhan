@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoạn Code Ưa Thích Khi Mới Học Java</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html#home">Trang chủ</a>
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#contact">Liên hệ</a>
+    </div>
+
+    <div class="post-detail">
+        <h1>Đoạn Code Ưa Thích Khi Mới Học Java</h1>
+        <p>Một trong những đoạn code đầu tiên mình yêu thích khi học Java trên Cisco là chương trình in ra bảng cửu chương. Đây là bài tập giúp mình hiểu rõ hơn về cách sử dụng vòng lặp lồng nhau trong Java, cũng như cách tổ chức và hiển thị thông tin theo cấu trúc có quy luật. Ví dụ như:</p>
+        <pre>
+            for (int i = 1; i <= 9; i++) {
+                for (int j = 1; j <= 9; j++) {
+                    System.out.print(i + " x " + j + " = " + (i * j) + "\t");
+                }
+                System.out.println();
+            }
+        </pre>
+        <p><strong>Cách hoạt động:</strong></p>
+        <ul>
+            <li>Vòng lặp ngoài chạy từ 1 đến 9, đại diện cho các số trong bảng cửu chương.</li>
+            <li>Vòng lặp trong chạy từ 1 đến 9, tính toán tích của số hiện tại trong vòng lặp ngoài với từng số từ 1 đến 9.</li>
+            <li><code>System.out.print</code> in kết quả từng phép tính trên cùng một dòng, với <code>\t</code> để căn chỉnh theo hàng cột.</li>
+            <li><code>System.out.println</code> chuyển xuống dòng mới sau khi hoàn thành mỗi bảng nhân.</li>
+        </ul>
+        <p>Bài tập này cho mình cái nhìn thực tế về cách vòng lặp xử lý các tác vụ lặp đi lặp lại một cách hiệu quả. Mình cũng học được cách định dạng và tổ chức dữ liệu đầu ra sao cho dễ đọc.</p>
+    </div>
+</body>
+</html>
+

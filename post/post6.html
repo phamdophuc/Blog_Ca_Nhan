@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoạn Code Đặc Biệt</title>
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html#home">Trang chủ</a>
+        <a href="../index.html#blog">Blog</a>
+        <a href="../index.html#contact">Liên hệ</a>
+    </div>
+
+    <div class="post-detail">
+        <h1>Đoạn Code Đặc Biệt: Chương Trình Kiểm Tra Số Nguyên Tố</h1>
+        <p>Một đoạn code khác mà mình rất thích trong quá trình học Java tại Cisco là bài tập kiểm tra số nguyên tố. Đoạn code này không chỉ đơn thuần kiểm tra tính chất toán học mà còn giúp mình hiểu rõ hơn về cách tối ưu hóa thuật toán với vòng lặp và điều kiện. Đây là đoạn code:
+        </p>
+        <pre>
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Nhập một số: ");
+            int number = scanner.nextInt();
+            boolean isPrime = true;
+            
+            if (number < 2) {
+                isPrime = false;
+            } else {
+                for (int i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            
+            if (isPrime) {
+                System.out.println(number + " là số nguyên tố.");
+            } else {
+                System.out.println(number + " không phải là số nguyên tố.");
+            }
+            
+        </pre>
+        <p><strong>Cách hoạt động:</strong></p>
+        <ul>
+            <li>Sử dụng Scanner để nhận đầu vào từ người dùng.</li>
+            <li>Xác định nếu số nhỏ hơn 2 thì không phải số nguyên tố.</li>
+            <li>Sử dụng vòng lặp chạy từ 2 đến căn bậc hai của số nhập vào để kiểm tra.</li>
+            <li>Nếu tìm thấy bất kỳ số nào chia hết cho số nhập vào, vòng lặp dừng ngay lập tức nhờ lệnh break, giúp tiết kiệm thời gian xử lý.</li>
+            <li>Dựa vào giá trị của biến isPrime, chương trình sẽ in kết quả tương ứng.</li>
+        </ul>
+        <p>Bài tập này giúp mình nhận thức được tầm quan trọng của việc tối ưu hóa thuật toán, nhất là khi làm việc với các bài toán có phạm vi lớn.</p>
+    </div>
+</body>
+</html>
+

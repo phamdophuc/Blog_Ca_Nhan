@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Trang chủ</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Liên hệ</a>
+    </div>
+
+
+    <div id="home" class="home">
+        <img src="image/avatar.jpg" alt="Your Photo">
+        <div class="typewriter">
+            <h1>Xin chào! Tên tôi là Phạm Đỗ Phúc</h1>
+        </div>
+        <div class="info">
+            <p>Tôi hiện tại đang là sinh viên năm 4 của Trường Đại Học Công Nghệ TP.HCM.</p>
+            <p>Hiện tại tôi đang học chuyên ngành công nghệ thông phần mềm.</p>
+            <p>Tôi có sở thích là đọc tiểu thuyết, truyện tranh, chia sẻ những gì mình biết và được học.</p>
+            <p>Đây là trang Blog của tôi, tôi sẽ chia sẻ cho mọi người biết về những gì tôi đã được học trên Cisco.</p>
+        </div>
+    </div>
+    
+    
+
+
+    <div id="blog" class="blog-grid" style="display: none;">
+        <a href="post/post1.html" class="blog-post">
+            <h2>Giới Thiệu Ngôn Ngữ Lập Trình Java</h2>
+            <p>Java là một trong những ngôn ngữ lập trình phổ biến nhất thế giới.</p>
+        </a>
+        <a href="post/post2.html" class="blog-post">
+            <h2>Tại Sao Nên Học ngôn ngữ Java?</h2>
+            <p>Java được coi là một ngôn ngữ “điểm khởi đầu” lý tưởng cho sinh viên CNTT.</p>
+        </a>
+        <a href="post/post3.html" class="blog-post">
+            <h2>Tính Đa Nền Tảng Của Java</h2>
+            <p>khả năng chạy trên nhiều nền tảng khác nhau.</p>
+        </a>
+        <a href="post/post4.html" class="blog-post">
+            <h2>Java Và Khái Niệm OOP</h2>
+            <p>khái niệm về hướng đối tượng (OOP) trong Java.</p>
+        </a>
+        <a href="post/post5.html" class="blog-post">
+            <h2>Đoạn Code Ưa Thích Khi Mới Học Java</h2>
+            <p>Một trong những đoạn code đầu tiên mình yêu thích khi học Java trên Cisco.</p>
+        </a>
+        <a href="post/post6.html" class="blog-post">
+            <h2>Đoạn Code Đặc Biệt</h2>
+            <p>Chương Trình Kiểm Tra Số Nguyên Tố.</p>
+        </a>
+        <a href="post/post7.html" class="blog-post">
+            <h2>Giới Thiệu Ngôn Ngữ JavaScript</h2>
+            <p>JavaScript là ngôn ngữ lập trình phía client được sử dụng rộng rãi nhất hiện nay.</p>
+        </a>
+        <a href="post/post8.html" class="blog-post">
+            <h2>JavaScript Trong Cuộc Sống Hàng Ngày</h2>
+            <p>JavaScript là một phần không thể thiếu của cuộc sống số.</p>
+        </a>
+        <a href="post/post9.html" class="blog-post">
+            <h2>Đoạn Code Đầu Tiên Khi Học JavaScript</h2>
+            <p>Tạo một bộ đếm thời gian.</p>
+        </a>
+    </div>
+    
+
+ 
+    <div id="contact" class="contact-section" style="display: none;">
+        <h1>Liên hệ</h1>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:phamdophuc12345@gmail.com">phamdophuc12345@gmail.com</a></p>
+            <p><i class="fas fa-phone-alt"></i> Số điện thoại: <a href="tel:0901287624">0901-287-624</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Địa chỉ: 861/72/11, Trần Xuân Soạn, Tân Hưng, Quận 7, TP.HCM, Việt Nam</p>
+        </div>
+    
+        <div class="social-links">
+            <h2>Theo dõi tôi:</h2>
+            <a href="https://www.facebook.com/PhamDoPhuc" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/phamdophuc/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    
+
+    <script>
+        const navbarLinks = document.querySelectorAll('.navbar a');
+        const sections = document.querySelectorAll('div[id]');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+
+                sections.forEach(section => {
+                    section.style.display = section.id === targetId ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const home = document.querySelector(".home");
+        const typewriter = document.querySelector(".typewriter h1");
+        const info = document.querySelector(".info");
+
+        // Sau khi hoàn tất hiệu ứng gõ chữ, thực hiện chuyển động
+        typewriter.addEventListener("animationend", function () {
+            home.classList.add("animate"); // Di chuyển ảnh và h1
+            setTimeout(() => {
+                home.classList.add("show-info"); // Hiển thị div.info
+            }, 1000); // Đợi 1 giây sau khi di chuyển xong
+        });
+    });
+    </script>
+
+</body>
+</html>

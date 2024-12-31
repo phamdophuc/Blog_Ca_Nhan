@@ -1,0 +1,228 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.navbar a:hover {
+    color: #00ffcc;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+}
+
+
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-post {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: transform 0.4s ease, border-color 0.4s ease, background-position 1.5s ease;
+    color: #ffffff;
+    position: relative;
+    background-size: 200%;
+    overflow: hidden;
+}
+
+.blog-post:hover {
+    transform: scale(1.05); 
+    border-color: #64ffda; 
+    background-position: right center; /* Hiệu ứng gradient di chuyển */
+}
+
+.blog-post h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+    color: #00ffaa;
+    position: relative;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.blog-post h2:hover {
+    transform: translateX(10px); /* Tiêu đề di chuyển nhẹ */
+    color: #64ffda; 
+}
+
+.blog-post p {
+    margin: 0;
+    font-size: 1rem;
+    color: #b3b3cc;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.blog-post:hover p {
+    transform: translateY(-5px); 
+    opacity: 0.9; 
+}
+
+/* Thêm hiệu ứng viền phát sáng */
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid rgba(100, 255, 218, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.blog-post:hover::before {
+    opacity: 1;
+}
+
+/* Hiệu ứng gradient động */
+@keyframes gradientAnimation {
+    0% {
+        background-position: left center;
+    }
+    50% {
+        background-position: right center;
+    }
+    100% {
+        background-position: left center;
+    }
+}
+
+.blog-post {
+    animation: gradientAnimation 6s infinite linear;
+}
+
+
+#contact {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(145deg, #2c5364, #0f2027);
+}
+
+#contact h1 {
+    font-size: 2rem;
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.contact-section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #1e1e2f, #272740);
+    border-radius: 15px;
+    color: #f5f5f5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2rem;
+    color: #00ffcc;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 255, 204, 0.5);
+}
+
+.contact-details p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.contact-details a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.contact-details i {
+    color: #00ffcc;
+    margin-right: 10px;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links h2 {
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #00ffcc;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.blog-post, #contact {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+
+
+
+

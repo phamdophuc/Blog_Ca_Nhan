@@ -1,0 +1,153 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: url('background.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.6);
+    transition: transform 0.3s ease, left 1s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 255, 204, 0.5);
+    transition: transform 1s ease-in-out, left 1s ease-in-out;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Vị trí ảnh và h1 sau khi chuyển động */
+.home.animate img,
+.home.animate h1 {
+    left: 20%;
+    transform: translateX(0);
+}
+
+.info {
+    background: linear-gradient(135deg, rgba(0, 255, 204, 0.8), rgba(0, 255, 170, 0.5)); /* Nền gradient */
+    color: #ffffff; /* Màu chữ trắng */
+    border-radius: 15px; /* Bo góc */
+    padding: 20px 30px; /* Khoảng cách bên trong */
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.5), 0 5px 15px rgba(0, 255, 170, 0.4); /* Hiệu ứng đổ bóng */
+    max-width: 600px; /* Độ rộng tối đa */
+    margin: 30px auto; /* Căn giữa */
+    text-align: justify; /* Canh đều nội dung */
+    line-height: 1.8; /* Khoảng cách dòng thoáng hơn */
+    font-family: "Roboto", sans-serif; /* Font chữ hiện đại */
+    font-size: 1.1rem; /* Kích thước chữ */
+    backdrop-filter: blur(10px); /* Hiệu ứng mờ nền phía sau */
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(30px); /* Vị trí ban đầu thấp hơn */
+    transition: opacity 1s ease, transform 1s ease; /* Hiệu ứng hiển thị mượt */
+}
+
+/* Hiển thị với hiệu ứng */
+.show-info .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tương tác khi hover */
+.info:hover {
+    transform: scale(1.05); /* Phóng to nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0, 255, 204, 0.7), 0 10px 20px rgba(0, 255, 170, 0.5);
+}
+
+/* Tăng hiệu ứng động cho đoạn văn */
+.info p {
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn */
+    font-size: 1.1rem; /* Kích thước chữ */
+    color: #ffffff; /* Màu chữ */
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.8); /* Hiệu ứng ánh sáng cho chữ */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hiệu ứng khi hover đoạn văn */
+.info p:hover {
+    color: #00ffaa;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 1), 0 0 20px rgba(100, 255, 218, 0.8);
+}
+
+
+
+
+
+/* Typewriter Effect Styling */
+.typewriter h1{
+    overflow: hidden; /* Ẩn chữ chưa được gõ ra */
+    white-space: nowrap; /* Không xuống dòng */
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    width: 0; 
+}
+
+/* Hiệu ứng gõ chữ cho từng thẻ */
+.typewriter h1 {
+    font-size: 2.5rem;
+    color: #00ffaa;
+    text-shadow: 2px 2px 10px rgba(0, 255, 204, 0.5);
+    animation: typing-h1 3s steps(30, end), blink-caret 0.5s step-end infinite;
+    animation-fill-mode: forwards; /* Giữ trạng thái sau khi hoàn thành */
+}
+
+
+/* Hiệu ứng gõ chữ */
+@keyframes typing-h1 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* Nhấp nháy con trỏ */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #00ffcc;
+    }
+}
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hiệu ứng ánh sáng di chuyển */
+@keyframes glowingBorder {
+    0% {
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 30px #00ffaa;
+    }
+    50% {
+        box-shadow: 0 0 15px #64ffda, 0 0 30px #64ffda, 0 0 45px #64ffda;
+    }
+    100% {
+        box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 30px #00ffaa;
+    }
+}
