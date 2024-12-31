@@ -151,3 +151,70 @@
         box-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa, 0 0 30px #00ffaa;
     }
 }
+
+
+
+.cv-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-cv {
+    display: inline-block;
+    padding: 12px 24px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #00ccff, #00ff99);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 204, 153, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cv::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: 1;
+}
+
+.btn-cv:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 204, 153, 0.7);
+}
+
+.btn-cv:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-cv span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Glow effect */
+.btn-cv:hover {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 204, 153, 0.5);
+    }
+    100% {
+        box-shadow: 0 8px 30px rgba(0, 204, 153, 0.8);
+    }
+}
+
